@@ -1,0 +1,165 @@
+{
+  "lawyer1": {
+    "name": "Arjun Sharma",
+    "dateOfBirth": "2001-12-30",
+    "nationality": "Indian",
+    "sex": "Male",
+    "contactNumber": "+919051179305",
+    "UID": 791619819989,
+    "associatedCaseIds": [1, 2, 3],
+    "walletAddress": "0x90F8bf6A479f320ead074411a4B0e7944Ea8c9C1"
+  },
+  "lawyer2": {
+    "name": "Ayesha Khan",
+    "dateOfBirth": "1985-07-15",
+    "nationality": "Indian",
+    "sex": "Female",
+    "contactNumber": "+919876543210",
+    "UID": 791619819987,
+    "associatedCaseIds": [],
+    "walletAddress": "0xFFcf8FDEE72ac11b5c542428B35EEF5769C409f0"
+  },
+  "lawyer3": {
+    "name": "Maria D'Souza",
+    "dateOfBirth": "1990-03-20",
+    "nationality": "Indian",
+    "sex": "Female",
+    "contactNumber": "+919988776655",
+    "UID": 987654321098,
+    "associatedCaseIds": [],
+    "walletAddress": "0x22d491Bde2303f2f43325b2108D26f1eAbA1e32b"
+  },
+  "judge1": {
+      "name": "Amit Sharma",
+      "dateOfBirth": "2001-12-30",
+      "nationality": "Indian",
+      "sex": "Male",
+      "contactNumber": "+919051179305",
+      "UID": 791619819970,
+      "associatedCaseIds": [],
+      "walletAddress": "0xE11BA2b4D45Eaed5996Cd0823791E0C93114882d"
+    },
+    "judge2": {
+      "name": "Priya Verma",
+      "dateOfBirth": "1975-06-15",
+      "nationality": "Indian",
+      "sex": "Female",
+      "contactNumber": "+916325789752",
+      "UID": 123456789012,
+      "associatedCaseIds": [],
+      "walletAddress": "0xd03ea8624C8C5987235048901fB614fDcA89b117"
+    },
+    "judge3": {
+      "name": "Ravi Patel",
+      "dateOfBirth": "1980-03-25",
+      "nationality": "Indian",
+      "sex": "Male",
+      "contactNumber": "+919876543210",
+      "UID": 987654321000,
+      "associatedCaseIds": [],
+      "walletAddress": "0x95cED938F7991cd0dFcb48F0a06a40FA1aF46EBC"
+    },
+    "judge4": {
+      "name": "Kiran Desai",
+      "dateOfBirth": "1990-08-20",
+      "nationality": "Indian",
+      "sex": "Male",
+      "contactNumber": "+919900990099",
+      "UID": 456789012345,
+      "associatedCaseIds": [],
+      "walletAddress": "0x3E5e9111Ae8eB78Fe1CC3bb8915d5D461F3Ef9A9"
+    },
+    "judge5": {
+      "name": "Meera Iyer",
+      "dateOfBirth": "1988-04-10",
+      "nationality": "Indian",
+      "sex": "Female",
+      "contactNumber": "+919812345678",
+      "UID": 654321098765,
+      "associatedCaseIds": [],
+      "walletAddress": "0x28a8746e75304c0780E011BEd21C72cD78cd535E"
+    },
+    "judge6": {
+      "name": "Vikram Joshi",
+      "dateOfBirth": "1973-11-05",
+      "nationality": "Indian",
+      "sex": "Male",
+      "contactNumber": "+919822334455",
+      "UID": 234567890123,
+      "associatedCaseIds": [],
+      "walletAddress": "0xACa94ef8bD5ffEE41947b4585a84BdA5a3d3DA6E"
+    },
+    "judge7": {
+      "name": "Sneha Nair",
+      "dateOfBirth": "1985-07-22",
+      "nationality": "Indian",
+      "sex": "Female",
+      "contactNumber": "+919876543210",
+      "UID": 112233445566,
+      "associatedCaseIds": [],
+      "walletAddress": "0x1dF62f291b2E969fB0849d99D9Ce41e2F137006e"
+    },
+  
+  "client1": {
+    "name": "Rajesh Patel",
+    "dateOfBirth": "2001-12-30",
+    "nationality": "Indian",
+    "sex": "Male",
+    "contactNumber": "+919051179307",
+    "UID": 791619819984,
+    "associatedLawyers": [],
+    "associatedCaseIds": [],
+    "walletAddress": "0x610Bb1573d1046FCb8A70Bbbd395754cD57C2b60"
+  },
+  "client2": {
+    "name": "Vikram Singh",
+    "dateOfBirth": "2001-12-30",
+    "nationality": "Indian",
+    "sex": "Male",
+    "contactNumber": "+919051179308",
+    "UID": 791619819988,
+    "associatedLawyers": [],
+    "associatedCaseIds": [],
+    "walletAddress": "0x855FA758c77D68a04990E992aA4dcdeF899F654A"
+  },
+  "client3": {
+    "name": "Neha Mehta",
+    "dateOfBirth": "2001-12-30",
+    "nationality": "Indian",
+    "sex": "Female",
+    "contactNumber": "+919051179308",
+    "UID": 791619819986,
+    "associatedLawyers": [],
+    "associatedCaseIds": [],
+    "walletAddress": "0xfA2435Eacf10Ca62ae6787ba2fB044f8733Ee843"
+  },
+
+  "legalCase1": {
+    "UIDOfParty1": 791619819984,
+    "UIDOfParty2": 791619819988,
+    "associatedLawyers": [791619819989, 791619819987],
+    "caseSubject": "Hit and Run",
+    "caseId": 1,
+    "progress2": "Clients, Lawyers & Judge Notified.",
+    "progress3": "First hearing completed.",
+    "progress4": "Second hearing postponed.",
+    "progress5": "Second hearing completed.",
+    "progress6": "Verdict announced."
+  },
+  "legalCase2": {
+    "UIDOfParty1": 791619819988,
+    "UIDOfParty2": 791619819984,
+    "associatedLawyers": [791619819989, 987654321098],
+    "caseSubject": "Car Accident",
+    "caseId": 2,
+    "progress2": "Clients, Lawyers & Judge Notified."
+  },
+  "legalCase3": {
+    "UIDOfParty1": 791619819986,
+    "UIDOfParty2": 791619819984,
+    "associatedLawyers": [791619819989, 987654321098],
+    "caseSubject": "Property Dispute",
+    "caseId": 3,
+    "progress2": "Clients, Lawyers & Judge Notified."
+  }
+}

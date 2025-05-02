@@ -1,0 +1,22 @@
+{
+  "1337": {
+    "contract": {
+      "address": "0xe78A0F7E598Cc8b0Bb87894B0F60dD2a88d6a8Ab"
+    }
+  },
+  "11155111": {
+    "contract": {
+      "address": ""
+    }
+  },
+  "80002": {
+    "contract": {
+      "address": ""
+    }
+  },
+  "2710": {
+    "contract": {
+      "address": "0x7a9a379394C9E0b4b869aCF56fAA88214a5D3900"
+    }
+  }
+}

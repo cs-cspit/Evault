@@ -1,0 +1,98 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend-vite/Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend-vite:/app
+      - /app/node_modules
+      - blockchain_artifacts:/blockchain-hardhat/artifacts:ro
+    environment:
+      - NODE_ENV=development
+      - VITE_BACKEND_URL=http://localhost:3000
+      - VITE_BLOCKCHAIN_URL=http://localhost:8545
+    command: npm run dev -- --host
+    networks:
+      - app-network
+    depends_on:
+      blockchain-node:
+        condition: service_healthy
+    tty: true
+    stdin_open: true
+
+  blockchain-node:
+    build:
+      context: ./blockchain-hardhat
+      dockerfile: Dockerfile
+    ports:
+      - "8545:8545"
+    volumes:
+      - ./blockchain-hardhat:/app
+      - /app/node_modules
+      - blockchain_artifacts:/app/artifacts
+      - blockchain_data:/app/.hardhat
+    environment:
+      - HARDHAT_NETWORK=hardhat
+    command: npx hardhat node --hostname 0.0.0.0
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:8545"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    tty: true
+    stdin_open: true
+
+  blockchain-deploy:
+    build:
+      context: ./blockchain-hardhat
+      dockerfile: Dockerfile
+    volumes:
+      - ./blockchain-hardhat:/app
+      - /app/node_modules
+      - blockchain_artifacts:/app/artifacts
+      - blockchain_data:/app/.hardhat:ro
+    environment:
+      - HARDHAT_NETWORK=localhost
+    command: sh /app/deploy.sh
+    networks:
+      - app-network
+    depends_on:
+      blockchain-node:
+        condition: service_healthy
+    tty: true
+    stdin_open: true
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - BLOCKCHAIN_URL=http://127.0.0.1:8545
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+      - blockchain_artifacts:/blockchain-hardhat/artifacts:ro
+    command: sh -c "sleep 15 && node server.js"
+    depends_on:
+      - blockchain-deploy
+    networks:
+      - app-network
+    tty: true
+    stdin_open: true
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  blockchain_artifacts:
+  blockchain_data:

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Vault - Blockchain Legal Records System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2979FF',
+                        secondary: '#B0BEC5',
+                        background: '#FFFFFF',
+                        text: '#212121',
+                        border: '#CFD8DC',
+                        accent: '#2979FF',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+</head>
+<body class="bg-background text-text">
+    <!-- Navbar -->
+    <nav class="bg-white shadow px-6 py-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 2H8.828a2 2 0 00-1.414.586L6.293 3.707A1 1 0 015.586 4H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+                </svg>
+                <span class="ml-2 text-xl font-semibold text-text">E-Vault</span>
+            </div>
+            <div>
+                <button id="connectButton" class="bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-md">
+                    Connect MetaMask
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-primary text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold mb-4">Blockchain-Based eVault for Legal Records</h1>
+            <p class="text-xl mb-8">Transforming the Indian Judiciary System with Secure, Transparent, and Accessible Legal Records</p>
+        </div>
+    </section>
+
+    <!-- MetaMask Setup Guide -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 text-center">Setting Up MetaMask Wallet</h2>
+            
+            <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Step 1: Install MetaMask Extension</h3>
+                        <p class="mb-4">MetaMask is a browser extension that allows you to interact with the Ethereum blockchain.</p>
+                        <ol class="list-decimal pl-5 space-y-2">
+                            <li>Visit the <a href="https://metamask.io/download/" class="text-accent hover:underline" target="_blank">MetaMask website</a></li>
+                            <li>Click "Install MetaMask for Chrome" (or your preferred browser)</li>
+                            <li>Click "Add to Chrome" and confirm by clicking "Add extension"</li>
+                        </ol>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <div class="bg-gray-200 rounded-lg h-48 w-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="md:order-last">
+                        <h3 class="text-xl font-semibold mb-4">Step 2: Create a New Wallet</h3>
+                        <p class="mb-4">Set up your new MetaMask wallet by following these instructions:</p>
+                        <ol class="list-decimal pl-5 space-y-2">
+                            <li>Click the MetaMask icon in your browser's extension area</li>
+                            <li>Click "Get Started" and then "Create a Wallet"</li>
+                            <li>Create a password for your wallet</li>
+                            <li>You will be shown a Secret Recovery Phrase (12 words) - write this down and keep it in a secure place</li>
+                            <li>Verify your Secret Recovery Phrase by selecting the words in the correct order</li>
+                        </ol>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <div class="bg-gray-200 rounded-lg h-48 w-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Step 3: Connect to E-Vault</h3>
+                        <p class="mb-4">Once your MetaMask wallet is set up, you can connect it to our E-Vault platform:</p>
+                        <ol class="list-decimal pl-5 space-y-2">
+                            <li>Ensure you're logged into MetaMask</li>
+                            <li>Return to the E-Vault platform</li>
+                            <li>Click the "Connect MetaMask" button in the top-right corner</li>
+                            <li>A MetaMask popup will appear asking for permission to connect</li>
+                            <li>Click "Connect" to authorize the connection</li>
+                            <li>After successful connection, you can access E-Vault features using your Aadhar UID and connected wallet</li>
+                        </ol>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <div class="bg-gray-200 rounded-lg h-48 w-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Importance -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 text-center">Importance to the Indian Judiciary System</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <div class="flex items-center justify-center h-16 w-16 bg-primary rounded-full mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-center">Security & Data Integrity</h3>
+                    <p>Blockchain technology ensures tamper-proof storage of legal records, preventing unauthorized modifications and maintaining the integrity of case documents. This builds trust in the judicial process and eliminates concerns about document tampering.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <div class="flex items-center justify-center h-16 w-16 bg-primary rounded-full mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-center">Transparency & Accessibility</h3>
+                    <p>E-Vault provides transparent access to case information for authorized parties while maintaining appropriate privacy controls. This ensures that clients, lawyers, and judges can easily access necessary documents, reducing delays and improving judicial efficiency.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <div class="flex items-center justify-center h-16 w-16 bg-primary rounded-full mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-center">Efficiency & Reduced Backlog</h3>
+                    <p>By streamlining case registration, document management, and judge allocation, E-Vault addresses one of the biggest challenges facing the Indian judiciary – case backlogs. The system reduces administrative overhead and accelerates case processing.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <div class="flex items-center justify-center h-16 w-16 bg-primary rounded-full mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-center">Digital Identity & Reduced Fraud</h3>
+                    <p>Integration with Aadhar UID for authentication and MetaMask for access authorization creates a robust identity system that prevents impersonation and fraud in legal proceedings. This dual authentication system ensures that only authorized individuals can access or modify case information, protecting the integrity of the judicial process.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <div class="flex items-center justify-center h-16 w-16 bg-primary rounded-full mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-center">Better Resource Allocation</h3>
+                    <p>The automatic or random allocation of judges to cases ensures fair distribution of judicial workload and prevents case steering. Real-time tracking of case progress enables better resource management, allowing the judiciary to identify bottlenecks and allocate resources more effectively to improve overall system performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 text-center">Key Features of E-Vault</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow flex">
+                    <div class="mr-4 flex-shrink-0">
+                        <div class="h-12 w-12 bg-primary rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Seamless Registration</h3>
+                        <p>Streamlined registration process for clients, lawyers, and judges, ensuring easy onboarding for all stakeholders.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow flex">
+                    <div class="mr-4 flex-shrink-0">
+                        <div class="h-12 w-12 bg-primary rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Legal Case Registration</h3>
+                        <p>Secure registration of legal cases between clients with their respective lawyers, maintaining all relevant case details.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow flex">
+                    <div class="mr-4 flex-shrink-0">
+                        <div class="h-12 w-12 bg-primary rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Automatic Judge Allocation</h3>
+                        <p>Fair and transparent allocation of judges to registered cases, preventing bias and ensuring equitable distribution of judicial workload.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow flex">
+                    <div class="mr-4 flex-shrink-0">
+                        <div class="h-12 w-12 bg-primary rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Secure Login System</h3>
+                        <p>Dual authentication using Aadhar UID and MetaMask wallet for enhanced security and access control.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow flex">
+                    <div class="mr-4 flex-shrink-0">
+                        <div class="h-12 w-12 bg-primary rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Case Progress Tracking</h3>
+                        <p>Real-time updates on case progress by allocated judges and lawyers, providing transparency to all stakeholders.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow flex">
+                    <div class="mr-4 flex-shrink-0">
+                        <div class="h-12 w-12 bg-primary rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Document Management (IPFS)</h3>
+                        <p>Secure document storage using IPFS (InterPlanetary File System), ensuring immutability and distributed access to case documents.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-primary">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-white">Ready to Transform the Judicial Process?</h2>
+            <p class="text-xl mb-8 text-white opacity-90">Connect your MetaMask wallet and join our blockchain-based legal records system</p>
+            <button id="connectButtonCTA" class="bg-white text-primary hover:bg-gray-100 font-semibold px-6 py-3 rounded-md">
+                Connect MetaMask Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-xl font-semibold mb-4">E-Vault</h2>
+                    <p class="text-gray-400">Transforming the Indian judiciary system with blockchain technology.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Contact</h3>
+                    <p class="text-gray-400">support@evault-legal.in</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-sm text-gray-400 text-center">
+                &copy; 2025 E-Vault. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // MetaMask Connection Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const connectButton = document.getElementById('connectButton');
+            const connectButtonCTA = document.getElementById('connectButtonCTA');
+            
+            async function connectWallet() {
+                if (typeof window.ethereum !== 'undefined') {
+                    try {
+                        // Request account access
+                        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                        const account = accounts[0];
+                        
+                        // Update button text
+                        connectButton.textContent = account.slice(0, 6) + '...' + account.slice(-4);
+                        connectButtonCTA.textContent = 'Connected: ' + account.slice(0, 6) + '...' + account.slice(-4);
+                        
+                        // Add connected class
+                        connectButton.classList.remove('bg-primary');
+                        connectButton.classList.add('bg-green-500');
+                        
+                        alert('MetaMask connected successfully!');
+                    } catch (error) {
+                        console.error(error);
+                        alert('Failed to connect to MetaMask: ' + error.message);
+                    }
+                } else {
+                    alert('MetaMask is not installed. Please install it to use this feature.');
+                    window.open('https://metamask.io/download/', '_blank');
+                }
+            }
+            
+            connectButton.addEventListener('click', connectWallet);
+            connectButtonCTA.addEventListener('click', connectWallet);
+        });
+    </script>
+</body>
+</html>
